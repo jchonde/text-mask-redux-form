@@ -32,7 +32,7 @@ class SearchFormBase extends PureComponent {
         return (
             <div>
                 {this.renderSearchByAccountNumber()}
-                <button type="submit" onClick={this.props.reset}>Redux-form reset</button>
+                <button type="submit" onClick={this.props.resetForm}>Redux-form reset</button>
             </div>
         );
     }

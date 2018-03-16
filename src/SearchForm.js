@@ -1,15 +1,19 @@
 import React, {PureComponent} from "react";
-import {reduxForm} from "redux-form";
+import {reduxForm, reset} from "redux-form";
 import {reduxFormHOC} from "./reduxFormHOC";
 import SearchFormBase from "./SearchFormBase";
+import {connect} from "react-redux";
 
 
 class SearchForm extends PureComponent {
     render() {
 
-        return <SearchFormBase reset={this.props.reset} message={[]}/>;
+        return <SearchFormBase resetForm={this.props.resetForm} message={[]}/>;
     }
 }
 
 
-export default reduxForm({form: 'ok'})(reduxFormHOC(SearchForm));
+export default reduxForm({
+    form: "simple" // a unique identifier for this form
+})(connect(null, (dispatch) => ({ resetForm: () => dispatch(reset('simple')) }))(reduxFormHOC(SearchForm)));
+

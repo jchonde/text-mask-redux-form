@@ -1,6 +1,6 @@
 import React, {PureComponent} from "react";
 
-import {default as MaskedInput} from "react-text-mask";
+import MaskedInput from "./reactTextMask";
 
 import {WrappedFieldInputProps, WrappedFieldMetaProps} from "redux-form";
 
@@ -183,6 +183,7 @@ class Input extends PureComponent {
         };
         const {typeInput, ...subProps} = props;
         if (mask.mask) {
+            console.log(input)
             return (
                 <MaskedInput
                     mask={mask.mask}
@@ -223,9 +224,27 @@ class Input extends PureComponent {
             buttonOnClick,
             ...props
         } = this.props;
+
+        // pipe={TYPES.accountNumber.pipe}
+        // guide={TYPES.accountNumber.guide}
+        // mask={TYPES.accountNumber.mask}
+        // placeholder={TYPES.accountNumber.placeholder}
+
         return (
             <div>
-                {this.renderInput(input, placeholder, props)}
+
+                <MaskedInput
+                    {...input}
+
+                    pipe={TYPES.accountNumber.pipe}
+                    guide={TYPES.accountNumber.guide}
+                    mask={[/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, "-", /\d/]}
+                    placeholder={TYPES.accountNumber.placeholder}
+
+                    // mask={["(", /[1-9]/, /\d/, /\d/, ")", " ", /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]}
+                    // placeholder="(###) ####-####"
+
+                />
             </div>
         );
     }
