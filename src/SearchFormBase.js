@@ -32,7 +32,7 @@ class SearchFormBase extends PureComponent {
         return (
             <div>
                 {this.renderSearchByAccountNumber()}
-                <button type="submut" onClick={this.props.reset}>Clear values</button>
+                <button onClick={this.props.reset}></button>
             </div>
         );
     }
