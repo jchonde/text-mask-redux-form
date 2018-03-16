@@ -1,0 +1,17 @@
+{
+  "name": "repro-bug-textmask",
+  "version": "1.0.0",
+  "description": "A simple vanilla form written with redux-form.",
+  "keywords": [],
+  "homepage": "https://codesandbox.io/s/ykl3o968j9",
+  "main": "index.js",
+  "dependencies": {
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-redux": "5.0.6",
+    "react-text-mask": "5.0.0",
+    "redux": "3.6.0",
+    "redux-form": "7.0.4",
+    "redux-form-website-template": "0.0.41"
+  }
+}
