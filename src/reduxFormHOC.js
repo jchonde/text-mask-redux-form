@@ -1,4 +1,4 @@
-import React, {PureComponent, Component} from "react";
+import React, {PureComponent} from "react";
 import {InjectedFormProps} from "redux-form";
 
 /**
@@ -9,7 +9,7 @@ import {InjectedFormProps} from "redux-form";
  */
 const reduxFormHOC = (Component) => {
 
-    return class extends Component {
+    return class extends PureComponent {
         render() {
             return (<Component {...this.props} />);
         }
