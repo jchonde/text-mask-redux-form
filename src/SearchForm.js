@@ -12,4 +12,4 @@ class SearchForm extends PureComponent {
 }
 
 
-export default reduxForm()(reduxFormHOC(SearchForm));
+export default reduxForm({form: 'ok'})(reduxFormHOC(SearchForm));

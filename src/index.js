@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { Values } from "redux-form-website-template";
 import store from "./store";
 import showResults from "./showResults";
-import SimpleForm from "./SimpleForm";
+import SimpleForm from "./SearchForm";
 
 const rootEl = document.getElementById("root");
 
